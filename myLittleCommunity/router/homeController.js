@@ -5,7 +5,9 @@ HomeController = RouteController.extend({
   template: 'home',
   data: function () {
     return {
-      profiles: ProfilesCollection.find()
+      profiles: ProfilesCollection.find({}, {
+        limit: 10
+      })
     };
   }
 });

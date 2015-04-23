@@ -4,3 +4,7 @@ Router.route('/', function () {
 Router.route('/about', function () {
   this.render('about');
 });
+Router.route('/profiles/manuel', function () {
+  this.layout('profileLayout');
+  this.render('profileDetail');
+});

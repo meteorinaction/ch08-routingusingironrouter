@@ -19,7 +19,7 @@ Router.route('/about', function () {
 Router.route('/profiles/:_id', {
   layoutTemplate: 'profileLayout',
   waitOn: function () {
-    return Meteor.subscribe('profiles', this.params._id);
+    return Meteor.subscribe('profile', this.params._id);
   },
   template: 'profileDetail',
   yieldTemplates: {

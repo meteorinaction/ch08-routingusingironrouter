@@ -1,10 +1,10 @@
 <template name="profileDetail">
   {{> contentFor region='left' template="profileImage"}}
 
-  <h1>Manuel Schoebel</h1>
-  <p>I like to eat good food and also cooking it myself!</p>
+  <h1>{{name}}</h1>
+  <p>{{profileText}}</p>
 </template>
 
 <template name="profileImage">
-  <img src="/manuel.jpg">
+  <img class="img-rounded img-responsive" src="{{profileImg}}">
 </template>

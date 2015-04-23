@@ -1,11 +1,12 @@
-Router.route('/', function () {
-  this.render('home', {
-    data: function () {
-      return {
-        profiles: ProfilesCollection.find()
-      };
-    }
-  });
+Router.route('/', {
+  template: 'home',
+  data: function () {
+    return {
+      profiles: ProfilesCollection.find({}, {
+        limit: 10
+      })
+    };
+  }
 });
 
 Router.route('/about', function () {

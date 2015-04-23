@@ -1,4 +1,7 @@
 Router.route('/', {
+  waitOn: function () {
+    return Meteor.subscribe('profiles');
+  },
   template: 'home',
   data: function () {
     return {

@@ -1,16 +1,6 @@
 Router.route('/', {
-  name: 'home',
-  waitOn: function () {
-    return Meteor.subscribe('profiles');
-  },
-  template: 'home',
-  data: function () {
-    return {
-      profiles: ProfilesCollection.find({}, {
-        limit: 10
-      })
-    };
-  }
+  controller: 'HomeController',
+  name: 'home'
 });
 
 Router.route('/about', 'about', {

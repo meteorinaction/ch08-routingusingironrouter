@@ -9,3 +9,5 @@ insecure
 iron:router
 twbs:bootstrap
 manuelschoebel:wait-on-lib
+accounts-password
+ian:accounts-ui-bootstrap-3

@@ -21,7 +21,10 @@ Router.route('/profiles/:_id', {
   name: 'profile.details',
   layoutTemplate: 'profileLayout',
   waitOn: function () {
-    return Meteor.subscribe('profile', this.params._id);
+    return [
+      Meteor.subscribe('profile', this.params._id),
+      IRLibLoader.load("/jquery.fittext.js")
+    ];
   },
   template: 'profileDetail',
   yieldTemplates: {

@@ -13,13 +13,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{pathFor 'home'}}">My Little Community</a>
+        {{#linkTo route='home' class='navbar-brand'}} My Little Community {{/linkTo}}
+
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="{{pathFor 'about'}}">About</a></li>
+          <li>{{#linkTo route='about'}}About{{/linkTo}}</li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->

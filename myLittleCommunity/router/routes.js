@@ -1,4 +1,5 @@
 Router.route('/', {
+  name: 'home',
   waitOn: function () {
     return Meteor.subscribe('profiles');
   },
@@ -12,11 +13,12 @@ Router.route('/', {
   }
 });
 
-Router.route('/about', function () {
-  this.render('about');
+Router.route('/about', 'about', {
+  name: 'about'
 });
 
 Router.route('/profiles/:_id', {
+  name: 'profile.details',
   layoutTemplate: 'profileLayout',
   waitOn: function () {
     return Meteor.subscribe('profile', this.params._id);

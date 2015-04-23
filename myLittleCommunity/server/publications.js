@@ -9,3 +9,10 @@ Meteor.publish('profiles', function () {
 
   return profiles;
 });
+
+Meteor.publish('profile', function (_id) {
+  check(_id, String);
+  return ProfilesCollection.find({
+    _id: _id
+  });
+});

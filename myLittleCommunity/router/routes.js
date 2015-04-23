@@ -16,20 +16,20 @@ Router.route('/about', function () {
   this.render('about');
 });
 
-Router.route('/profiles/:_id', function () {
-  profile = ProfilesCollection.findOne({
-    _id: this.params._id
-  });
-  this.layout('profileLayout');
-  this.render('profileDetailLeft', {
-    to: 'left',
-    data: function () {
-      return profile;
+Router.route('/profiles/:_id', {
+  layoutTemplate: 'profileLayout',
+  waitOn: function () {
+    return Meteor.subscribe('profiles', this.params._id);
+  },
+  template: 'profileDetail',
+  yieldTemplates: {
+    'profileDetailLeft': {
+      to: 'left'
     }
-  });
-  this.render('profileDetail', {
-    data: function () {
-      return profile;
-    }
-  });
+  },
+  data: function () {
+    return ProfilesCollection.findOne({
+      _id: this.params._id
+    });
+  }
 });

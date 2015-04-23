@@ -1,5 +1,4 @@
 Router.route('/', {
-  controller: 'HomeController',
   name: 'home'
 });
 

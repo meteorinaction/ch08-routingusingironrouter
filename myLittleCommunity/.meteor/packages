@@ -8,3 +8,4 @@ meteor-platform
 insecure
 iron:router
 twbs:bootstrap
+manuelschoebel:wait-on-lib

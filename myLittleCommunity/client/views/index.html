@@ -20,7 +20,10 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li>{{#linkTo route='about'}}About{{/linkTo}}</li>
+
+          <li class="{{isActiveRoute 'about'}}">
+            {{#linkTo route="about"}}About{{/linkTo}}
+          </li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->

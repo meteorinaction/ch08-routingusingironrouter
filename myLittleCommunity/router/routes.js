@@ -6,5 +6,8 @@ Router.route('/about', function () {
 });
 Router.route('/profiles/manuel', function () {
   this.layout('profileLayout');
+  this.render('profileImage', {
+    to: 'left'
+  });
   this.render('profileDetail');
 });

@@ -26,5 +26,12 @@ ProfileController = RouteController.extend({
       }
     });
     this.next();
+  },
+  onBeforeAction: function () {
+    if (!Meteor.userId()) {
+      this.render('membersonly');
+    } else {
+      this.next();
+    }
   }
 });
